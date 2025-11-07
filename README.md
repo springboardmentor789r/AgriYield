@@ -137,3 +137,71 @@ loaded_model = joblib.load("RandomReg.pkl")
 - Pipeline Deployment → Implemented automated preprocessing + prediction pipeline.
 
 - Serialization → Saved and reloaded model for reuse or API integration.
+
+
+---
+
+# Time Series Models
+
+## 📘 Project Overview
+This project focuses on **forecasting crop yield** over time using a combination of **classical statistical models (SARIMAX, ARIMA)** and **machine learning-based time series forecasting (Prophet)**.  
+The objective is to predict future crop yields based on historical data and environmental factors such as **Temperature, Humidity, Wind Speed, N, P, K, Soil Quality**, and **Soil pH**.
+
+---
+
+## 🧩 Dataset
+The dataset (`crop_yield_dataset.csv`) contains daily records of crop yields and related features.
+
+### Key Columns:
+- `Date` — Timestamp of observation  
+- `Crop_Yield` — Yield value (target variable)  
+- `Temperature`, `Humidity`, `Wind_Speed` — Weather parameters  
+- `N`, `P`, `K` — Soil nutrient levels  
+- `Soil_pH`, `Soil_Quality` — Soil characteristics  
+
+Rows with `Crop_Yield = 0` were removed to ensure data quality.
+
+---
+
+## ⚙️ Preprocessing Steps
+1. **Data Cleaning**
+   - Dropped categorical columns: `Crop_Type`, `Soil_Type`.
+   - Removed zero-yield records.
+2. **Datetime Indexing**
+   - Converted `Date` column to datetime.
+   - Set it as index for time series operations.
+3. **Resampling**
+   - Resampled the data to a **daily frequency** to ensure regular intervals.
+4. **Handling Missing Values**
+   - Used **mean interpolation** for smooth continuity in Prophet.
+
+---
+
+## 🔍 Exploratory Data Analysis (EDA)
+- Visualized overall trends in crop yield.
+- Conducted **stationarity checks** using:
+  - **ADF (Augmented Dickey–Fuller)** test.
+  - **KPSS (Kwiatkowski–Phillips–Schmidt–Shin)** test.
+- Plotted **ACF** and **PACF** graphs to understand autocorrelation and partial autocorrelation.
+
+---
+
+## 🧠 Model Building
+
+### 1️⃣ SARIMAX Model
+- Model: `SARIMAX(order=(1,0,1))`
+- Trained on 90% of data, forecasted next 20 days.
+- Captured short-term temporal dependencies.
+
+### 2️⃣ ARIMA Model
+- Model: `ARIMA(order=(1,1,1))`
+- Used differencing to ensure stationarity.
+- Diagnostic plots generated to validate residual normality and homoscedasticity.
+
+### 3️⃣ Prophet Model (with Regressors)
+- Model: `Prophet()` from Facebook’s Prophet library.
+- Added multiple environmental regressors:
+  ```python
+  ['Soil_pH', 'Temperature', 'Humidity', 'Wind_Speed', 'N', 'P', 'K', 'Soil_Quality']
+
+---
