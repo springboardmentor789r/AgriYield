@@ -1,8 +1,8 @@
 catboost==1.2.8
 fastapi
 joblib
-narwhals==2.11.0
 numpy==2.3.4
 pandas==2.3.3
 prophet==1.2.1
 uvicorn
+Python == 3.11.9
