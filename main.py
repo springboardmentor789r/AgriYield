@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from pydantic import BaseModel, validator
+from pydantic import BaseModel,validator
 import joblib
 import pandas as pd
 from catboost import CatBoostRegressor
@@ -46,8 +46,17 @@ class CropYieldPrediction(BaseModel):
         return value_lower
     
 class CropYieldForecast(BaseModel):
-    Crop_Type : str
+    Crop_Type: str
     Months: int
+    Soil_pH: float
+    Temperature: float
+    Humidity: float
+    Wind_Speed: float
+    N: float
+    P: float
+    K: float
+    Soil_Quality: float
+
 
     @validator("Crop_Type")
     def validate_crop(cls, value):
@@ -55,6 +64,7 @@ class CropYieldForecast(BaseModel):
         if value_lower not in ALLOWED_CROPS:
             raise ValueError(f"Crop_Type '{value}' is not supported.Allowed: {ALLOWED_CROPS}")
         return value_lower
+    
     @validator("Months")
     def validate_months(cls, value):
         if value < 1:
@@ -75,16 +85,22 @@ def predict_yield(data: CropYieldPrediction):
     }
 
 @app.post("/forecast")
-def forecast_crop(request: CropYieldForecast):
+def forecast_crop_with_regressors(request: CropYieldForecast):
     crop = request.Crop_Type
     months = request.Months
-    model_path = f"prophet_models\\{crop}_prophet.pkl"
+
+    model_path = f"prophet_reg_models/{crop}_prophet.pkl"
     model = joblib.load(model_path)
 
+    future_dates = pd.date_range(start=pd.Timestamp.today(), periods=months, freq='ME')
+    future_df = pd.DataFrame({"ds": future_dates})
 
-    future = pd.DataFrame(pd.date_range(start=pd.Timestamp.today(), periods=months, freq='ME'),columns=['ds'])
+    # Repeat each regressor for all months
+    for col in ["Soil_pH", "Temperature", "Humidity", "Wind_Speed", "N", "P", "K", "Soil_Quality"]:
+        future_df[col] = [getattr(request, col)] * months
 
-    forecast = model.predict(future)
+    # Predict
+    forecast = model.predict(future_df)
 
     result = []
     for _, row in forecast.iterrows():
@@ -97,8 +113,4 @@ def forecast_crop(request: CropYieldForecast):
         "Crop": crop,
         "Forecast_Horizon_Months": months,
         "Forecast": result
-    } 
-
-
-
-
+    }
