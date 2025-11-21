@@ -73,7 +73,6 @@ class CropYieldForecast(BaseModel):
 
 
 
-
 @app.post("/predict")
 def predict_yield(data: CropYieldPrediction):
     input_data = pd.DataFrame([data.dict()])
