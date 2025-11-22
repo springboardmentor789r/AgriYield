@@ -60,6 +60,7 @@ graph TD;
     RF_Model-->Response_Prediction;
     Prophet_Model-->Forecast_Response;
 
+
 # Machine Learning Models
 | Model                   | Purpose                            | Performance               |
 | ----------------------- | ---------------------------------- | ------------------------- |
