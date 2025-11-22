@@ -1,1 +1,8 @@
-
+fastapi
+uvicorn
+pandas
+scikit-learn
+joblib
+prophet
+pydantic
+category_encoders
