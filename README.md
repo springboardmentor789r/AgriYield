@@ -48,20 +48,7 @@ The dataset includes:
 - Chart.js (Visual Analytics)
 
 ---
-
-## 🚀 Architecture Overview
-
-```mermaid
-graph TD;
-    User-->Frontend_UI(React + Tailwind);
-    Frontend_UI-- API Calls -->Backend(FastAPI);
-    Backend-- ML Prediction -->RF_Model(Random Forest);
-    Backend-- Time Forecast -->Prophet_Model;
-    RF_Model-->Response_Prediction;
-    Prophet_Model-->Forecast_Response;
-
-
-# Machine Learning Models
+## Machine Learning Models
 | Model                   | Purpose                            | Performance               |
 | ----------------------- | ---------------------------------- | ------------------------- |
 | Random Forest Regressor | Prediction based on soil & weather | High accuracy (R² > 0.99) |
@@ -95,3 +82,16 @@ Under the theme of AI in Agriculture
 # License
 This project is licensed — “Built by Farhan Abid with License”
 All rights reserved © 2025
+
+---
+## 🚀 Architecture Overview
+
+```mermaid
+graph TD;
+    User-->Frontend_UI(React + Tailwind);
+    Frontend_UI-- API Calls -->Backend(FastAPI);
+    Backend-- ML Prediction -->RF_Model(Random Forest);
+    Backend-- Time Forecast -->Prophet_Model;
+    RF_Model-->Response_Prediction;
+    Prophet_Model-->Forecast_Response;
+
