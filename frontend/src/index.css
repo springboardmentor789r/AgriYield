@@ -1,6 +1,59 @@
 @import "tailwindcss";
 
+
+
+/* Custom animations */
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.9s ease-out;
+  }
+  .animate-fadeUp {
+    animation: fadeUp 1s ease both;
+  }
+  .animate-slideDown {
+    animation: slideDown 0.9s ease-out;
+  }
+  .animate-slideUp {
+    animation: slideUp 1s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+
+
+
+html,body,#root { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background-color: var(--bg);
+  color: #0f172a;
+}
+
+
 :root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --muted: #6b7280;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
