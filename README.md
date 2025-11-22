@@ -52,6 +52,7 @@ The dataset includes:
 ## 🚀 Architecture Overview
 
 ```mermaid
+
 graph TD;
     User-->Frontend_UI(React + Tailwind);
     Frontend_UI-- API Calls -->Backend(FastAPI);
@@ -60,38 +61,5 @@ graph TD;
     RF_Model-->Response_Prediction;
     Prophet_Model-->Forecast_Response;
 
+---
 
-Machine Learning Models
-| Model                   | Purpose                            | Performance               |
-| ----------------------- | ---------------------------------- | ------------------------- |
-| Random Forest Regressor | Prediction based on soil & weather | High accuracy (R² > 0.99) |
-| Prophet (Meta/Facebook) | Short-term yield forecasting       | Stable forecasting trends |
-
-
-🔮 Future Enhancements
-
-📌 Add deployment (Netlify + Render / Docker)
-
-📌 Real weather & soil sensor integration (IoT)
-
-📌 User accounts & crop planning dashboard
-
-📌 Multi-region farm analytics support
-
-# 🏆 Acknowledgements
-
-This project is developed as part of Infosys Springboard Virtual Internship 6.0
-Under the theme of AI in Agriculture
-
-# Authors
-
-| Developer       | Contact                                                                                                    |
-| --------------- | ---------------------------------------------------------------------------------------------------------- |
-| **Farhan Abid** | 📧 [f.abid.work@gmail.com](mailto:f.abid.work@gmail.com)                                                   |
-|                 | 🔗 LinkedIn: [www.linkedin.com/in/farhan-abid-8001a9253](http://www.linkedin.com/in/farhan-abid-8001a9253) |
-|                 | 🐙 GitHub: [http://github.com/farhanabid786](http://github.com/farhanabid786)                              |
-
-
-# License
-This project is licensed — “Built by Farhan Abid with License”
-All rights reserved © 2025
