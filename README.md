@@ -61,13 +61,14 @@ graph TD;
     Prophet_Model-->Forecast_Response;
 
 
-# Machine Learning Models
+Machine Learning Models
 | Model                   | Purpose                            | Performance               |
 | ----------------------- | ---------------------------------- | ------------------------- |
 | Random Forest Regressor | Prediction based on soil & weather | High accuracy (R² > 0.99) |
 | Prophet (Meta/Facebook) | Short-term yield forecasting       | Stable forecasting trends |
 
-# 🔮 Future Enhancements
+
+🔮 Future Enhancements
 
 📌 Add deployment (Netlify + Render / Docker)
 
