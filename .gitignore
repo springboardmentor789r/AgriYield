@@ -1,0 +1,21 @@
+# Python
+backend/venv/
+backend/__pycache__/
+*.pyc
+*.pkl
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Environment vars
+*.env
+.env
+
+# VS Code junk
+.vscode/
+
+# Build and cache
+__pycache__/
+*.log
