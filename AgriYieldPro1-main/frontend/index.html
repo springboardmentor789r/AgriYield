@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriYield Predictor</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- For icons -->
+    
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #74b9ff, #0984e3, #00b894); /* Multi-gradient for depth */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Container */
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            padding: 50px;
+            max-width: 700px;
+            width: 90%;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Header */
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #2d3436;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 i {
+            color: #00b894;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: #636e72;
+        }
+
+        /* Form */
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #2d3436;
+            font-size: 1.1em;
+        }
+
+        .input-container {
+            position: relative;
+        }
+
+        .input-container i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #0984e3;
+            font-size: 1.2em;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 15px 15px 15px 45px; /* Space for icon */
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        select:focus, input:focus {
+            border-color: #00b894;
+            box-shadow: 0 0 12px rgba(0, 184, 148, 0.4);
+            outline: none;
+            transform: scale(1.02);
+        }
+
+        /* Full-width for some fields */
+        form > .form-group:nth-child(3), form > .form-group:nth-child(4), form > .form-group:nth-child(5), form > .form-group:nth-child(6), form > .form-group:nth-child(7), form > .form-group:nth-child(8), form > .form-group:nth-child(9) {
+            grid-column: span 2;
+        }
+
+        /* Button */
+        button {
+            grid-column: span 2;
+            padding: 18px;
+            background: linear-gradient(135deg, #00b894, #00cec9, #0984e3);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 184, 148, 0.5);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            display: none;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #00b894;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Result */
+        #result {
+            margin-top: 30px;
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #0984e3;
+            padding: 20px;
+            background: rgba(9, 132, 227, 0.1);
+            border-radius: 12px;
+            border: 2px solid #0984e3;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #636e72;
+        }
+
+        footer a {
+            color: #00b894;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            form {
+                grid-template-columns: 1fr;
+            }
+            form > .form-group:nth-child(3), form > .form-group:nth-child(4), form > .form-group:nth-child(5), form > .form-group:nth-child(6), form > .form-group:nth-child(7), form > .form-group:nth-child(8), form > .form-group:nth-child(9) {
+                grid-column: span 1;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            .container {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-seedling"></i> AgriYield Predictor</h1>
+        <p>Harness AI to forecast crop yields with precision. Enter your data below!</p>
+        <form id="predictionForm">
+            <div class="form-group">
+                <label>Crop Type:</label>
+                <div class="input-container">
+                    <i class="fas fa-leaf"></i>
+                    <select id="cropType" required>
+                        <option value="">Select Crop</option>
+                        <option value="Wheat">Wheat</option>
+                        <option value="Corn">Corn</option>
+                        <option value="Rice">Rice</option>
+                        <option value="Barley">Barley</option>
+                        <option value="Soybean">Soybean</option>
+                        <option value="Cotton">Cotton</option>
+                        <option value="Sugarcane">Sugarcane</option>
+                        <option value="Tomato">Tomato</option>
+                        <option value="Potato">Potato</option>
+                        <option value="Sunflower">Sunflower</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Soil Type:</label>
+                <div class="input-container">
+                    <i class="fas fa-mountain"></i>
+                    <select id="soilType" required>
+                        <option value="">Select Soil</option>
+                        <option value="Peaty">Peaty</option>
+                        <option value="Loamy">Loamy</option>
+                        <option value="Clay">Clay</option>
+                        <option value="Sandy">Sandy</option>
+                        <option value="Saline">Saline</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Soil pH:</label>
+                <div class="input-container">
+                    <i class="fas fa-flask"></i>
+                    <input type="number" id="soilPH" step="0.1" placeholder="e.g., 6.5" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Temperature (°C):</label>
+                <div class="input-container">
+                    <i class="fas fa-thermometer-half"></i>
+                    <input type="number" id="temperature" step="0.1" placeholder="e.g., 20.0" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Humidity (%):</label>
+                <div class="input-container">
+                    <i class="fas fa-tint"></i>
+                    <input type="number" id="humidity" step="0.1" placeholder="e.g., 80.0" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Wind Speed (km/h):</label>
+                <div class="input-container">
+                    <i class="fas fa-wind"></i>
+                    <input type="number" id="windSpeed" step="0.1" placeholder="e.g., 10.0" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Nitrogen (N):</label>
+                <div class="input-container">
+                    <i class="fas fa-atom"></i>
+                    <input type="number" id="N" step="0.1" placeholder="e.g., 60.0" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Phosphorus (P):</label>
+                <div class="input-container">
+                    <i class="fas fa-atom"></i>
+                    <input type="number" id="P" step="0.1" placeholder="e.g., 45.0" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Potassium (K):</label>
+                <div class="input-container">
+                    <i class="fas fa-atom"></i>
+                    <input type="number" id="K" step="0.1" placeholder="e.g., 31.5" required>
+                </div>
+            </div>
+            <button type="submit" id="submitBtn">
+                <span id="btnText">Predict Yield</span>
+                <div class="spinner" id="spinner"></div>
+            </button>
+        </form>
+        <div id="result"></div>
+        <footer>
+            <p>Powered by FastAPI & Machine Learning | <a href="https://github.com/your-repo" target="_blank">View on GitHub</a></p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
