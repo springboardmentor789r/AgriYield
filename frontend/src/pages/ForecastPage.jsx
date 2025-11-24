@@ -17,14 +17,13 @@ export default function ForecastPage() {
     N: 100,
     P: 40,
     K: 50,
-    Soil_Quality: 0.8,
   });
 
   const [forecast, setForecast] = useState(null);
 
   function update(e) {
     const { name, value } = e.target;
-    setForm(prev => ({ ...prev, [name]: isNaN(value) ? value : Number(value) }));
+    setForm(prev => ({ ...prev, [name]: value }));
   }
 
   async function submit(e) {
@@ -41,16 +40,20 @@ export default function ForecastPage() {
         <form onSubmit={submit} className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <SelectField label="Crop Type" name="Crop_Type" options={CROP_OPTIONS} value={form.Crop_Type} onChange={update} />
           <InputField label="Months" name="Months" value={form.Months} onChange={update} />
-          <InputField label="Soil pH" name="Soil_pH" value={form.Soil_pH} onChange={update} />
-          <InputField label="Temperature" name="Temperature" value={form.Temperature} onChange={update} />
-          <InputField label="Humidity" name="Humidity" value={form.Humidity} onChange={update} />
-          <InputField label="Wind Speed" name="Wind_Speed" value={form.Wind_Speed} onChange={update} />
-          <InputField label="N" name="N" value={form.N} onChange={update} />
-          <InputField label="P" name="P" value={form.P} onChange={update} />
-          <InputField label="K" name="K" value={form.K} onChange={update} />
-          <InputField label="Soil Quality" name="Soil_Quality" value={form.Soil_Quality} onChange={update} />
+          
+          <InputField label="Soil pH" name="Soil_pH" value={form.Soil_pH} onChange={update} unit="" />
+          <InputField label="Temperature" name="Temperature" value={form.Temperature} onChange={update} unit="°C" />
+          <InputField label="Humidity" name="Humidity" value={form.Humidity} onChange={update} unit="%" />
+          <InputField label="Wind Speed" name="Wind_Speed" value={form.Wind_Speed} onChange={update} unit="km/h" />
 
-          <button className="col-span-3 py-2 px-4 bg-sky-600 text-white rounded">Forecast</button>
+          <InputField label="N" name="N" value={form.N} onChange={update} unit="ppm" />
+          <InputField label="P" name="P" value={form.P} onChange={update} unit="ppm" />
+          <InputField label="K" name="K" value={form.K} onChange={update} unit="ppm" />
+
+
+          <button className="col-span-3 py-2 px-4 bg-sky-600 text-white rounded">
+            Forecast
+          </button>
         </form>
 
         {forecast && (

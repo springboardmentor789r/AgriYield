@@ -24,4 +24,3 @@ export async function forecastYield(data) {
         throw error;
     }
 }
-
