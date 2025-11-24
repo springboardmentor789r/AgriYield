@@ -1,0 +1,34 @@
+# ----------------------
+# React (Frontend)
+# ----------------------
+Frontend/node_modules/
+Frontend/build/
+Frontend/dist/
+Frontend/.env
+Frontend/.vite/
+
+# ----------------------
+# FastAPI (Backend)
+# ----------------------
+Backend/__pycache__/
+Backend/*.pyc
+Backend/.env
+Backend/venv/
+
+# If you keep venv in root
+venv/
+
+# OS/System files
+.DS_Store
+Thumbs.db
+
+
+Frontend/node_modules/
+Backend/node_modules/
+Backend/venv/
+__pycache__/
+.ipynb_checkpoints/
+catboost_info/
+RandomReg.pkl
+Repo/
+py files/
