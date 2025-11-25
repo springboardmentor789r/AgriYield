@@ -51,7 +51,7 @@ The dataset includes:
 ## Machine Learning Models
 | Model                   | Purpose                            | Performance               |
 | ----------------------- | ---------------------------------- | ------------------------- |
-| Random Forest Regressor | Prediction based on soil & weather | High accuracy (R² > 0.99) |
+| Random Forest Regressor | Prediction based on soil & weather | High accuracy (R² > 0.95) |
 | Prophet (Meta/Facebook) | Short-term yield forecasting       | Stable forecasting trends |
 
 
@@ -75,8 +75,8 @@ Under the theme of AI in Agriculture
 | Developer       | Contact                                                                                                    |
 | --------------- | ---------------------------------------------------------------------------------------------------------- |
 | **Farhan Abid** | 📧 [f.abid.work@gmail.com](mailto:f.abid.work@gmail.com)                                                   |
-|                 | 🔗 LinkedIn: [www.linkedin.com/in/farhan-abid-8001a9253](http://www.linkedin.com/in/farhan-abid-8001a9253) |
-|                 | 🐙 GitHub: [http://github.com/farhanabid786](http://github.com/farhanabid786)                              |
+|                 | 🔗 LinkedIn: FARHAN ABID(http://www.linkedin.com/in/farhan-abid-8001a9253) |
+|                 | 🐙 GitHub: FARHAN ABID(http://github.com/farhanabid786)                              |
 
 
 # License
