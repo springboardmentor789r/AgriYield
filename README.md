@@ -114,11 +114,11 @@ Pipeline([
 ### 7️⃣ Model Persistence
 Trained pipeline saved using Joblib:
 ```python
-joblib.dump(model, "RandomReg.pkl")
+joblib.dump(model, "Catboost.pkl")
 ```
 Reloaded seamlessly for predictions:
 ```python
-loaded_model = joblib.load("RandomReg.pkl")
+loaded_model = joblib.load("Catboost.pkl")
 ```
 
 ---
@@ -230,7 +230,7 @@ It exposes ML prediction endpoints for:
 - Produces future yield forecasts  
 
 ### ✔ Model Loading
-- `catboost_model.pkl` (or `RandomReg.pkl`)
+- `catboost_model.pkl` (or `Catboost.pkl`)
 - `prophet_model.pkl`
 
 ---
