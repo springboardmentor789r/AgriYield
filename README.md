@@ -303,3 +303,32 @@ It provides an intuitive interface that collects agricultural parameters and sen
 - Fetches predictions from backend and displays neatly
 
 ---
+
+## UI
+
+### Home Page
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/83f825e1-b657-48ad-bf13-194a1d0d8913" />
+
+---
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bb1d6cee-3270-4d7e-b5db-1bec6176f83d" />
+
+---
+
+### CatBoost Page
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d51c263f-781e-412d-9438-1afb6fdea7b9" />
+
+---
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d05cc511-cf2d-41d0-81de-70e576c7c3d4" />
+
+---
+
+### Prophet Page
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/da902205-0a53-470c-964b-8a97881cada5" />
+
+---
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4ec204dd-8914-4494-acc1-9d414ddec1e6" />
+
+---
+
+
+
