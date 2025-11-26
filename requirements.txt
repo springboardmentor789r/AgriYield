@@ -1,0 +1,10 @@
+fastapi>=0.95.0
+uvicorn[standard]>=0.22.0
+pydantic>=1.10.0
+pandas
+numpy
+scikit-learn
+catboost
+joblib
+pydantic[email]    # optional extras
+python-multipart   # optional if you accept form data/files
