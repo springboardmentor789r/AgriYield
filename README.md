@@ -1,4 +1,4 @@
-# 🌱 AgriYield Predictor — AI Powered Agriculture Insights 🚜📈
+# 🌱 AgriYield Predictor - AI Powered Agriculture Insights 🚜📈
 
 A complete **End-to-End Machine Learning + Time-Series Forecasting** web application designed to help farmers, researchers, and agri-business professionals accurately **predict crop yield** and **forecast future production** using environmental & soil factors.
 
@@ -70,6 +70,7 @@ The dataset includes:
 This project is developed as part of Infosys Springboard Virtual Internship 6.0
 Under the theme of AI in Agriculture
 
+<!--
 # Authors
 
 | Developer       | Contact                                                                                                    |
@@ -77,7 +78,7 @@ Under the theme of AI in Agriculture
 | **Farhan Abid** | 📧 [f.abid.work@gmail.com](mailto:f.abid.work@gmail.com)                                                   |
 |                 | 🔗 LinkedIn: FARHAN ABID(http://www.linkedin.com/in/farhan-abid-8001a9253) |
 |                 | 🐙 GitHub: FARHAN ABID(http://github.com/farhanabid786)                              |
-
+-->
 
 # License
 This project is licensed — “Built by Farhan Abid with License”
