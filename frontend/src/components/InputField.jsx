@@ -1,15 +1,6 @@
 import React from "react";
 
-export default function InputField({
-  label,
-  name,
-  type = "text",
-  value,
-  onChange,
-  placeholder,
-  unit,
-  error
-}) {
+export default function InputField({label,name,type = "text",value,onChange,placeholder,unit,error}) {
   return (
     <div>
       <label className="block text-sm font-medium text-slate-700 mb-1">

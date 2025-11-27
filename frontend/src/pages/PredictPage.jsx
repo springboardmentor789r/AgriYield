@@ -9,15 +9,15 @@ const SOIL_OPTIONS = ["Loamy", "Clay", "Sandy", "Saline", "Peaty"];
 
 export default function PredictPage() {
   const [form, setForm] = useState({
-    Crop_Type: "",
-    Soil_Type: "",
-    Soil_pH: "",
-    Temperature: "",
-    Humidity: "",
-    Wind_Speed: "",
-    N: "",
-    P: "",
-    K: "",
+    Crop_Type: "Barley",
+    Soil_Type: "Clay",
+    Soil_pH: "6.5",
+    Temperature: "24",
+    Humidity: "80",
+    Wind_Speed: "15",
+    N: "40",
+    P: "55",
+    K: "59",
   });
 
   const [errors, setErrors] = useState({});
@@ -101,7 +101,7 @@ export default function PredictPage() {
         {result && (
           <div className="mt-6 p-4 bg-emerald-50 rounded border-l-4 border-emerald-600">
             <h3 className="font-semibold">Predicted Yield:</h3>
-            <p className="text-xl">{result.Predicted_Yield}</p>
+            <p className="text-xl">{result.Predicted_Yield} tons/hectare</p>
           </div>
         )}
       </div>

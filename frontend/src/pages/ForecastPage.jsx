@@ -9,15 +9,15 @@ const CROP_OPTIONS = ["Barley","Corn","Cotton","Potato","Rice","Soybean","Sugarc
 
 export default function ForecastPage() {
   const [form, setForm] = useState({
-    Crop_Type: "",
-    Months: "",
-    Soil_pH: "",
-    Temperature: "",
-    Humidity: "",
-    Wind_Speed: "",
-    N: "",
-    P: "",
-    K: "",
+    Crop_Type: "Cotton",
+    Months: "6",
+    Soil_pH: "6.5",
+    Temperature: "24",
+    Humidity: "80",
+    Wind_Speed: "17",
+    N: "46",
+    P: "51",
+    K: "62",
   });
 
   const [errors, setErrors] = useState({});
@@ -101,7 +101,7 @@ export default function ForecastPage() {
                 {forecast.Forecast.map((f, i) => (
                   <tr key={i} className="border-t">
                     <td className="p-2">{f.Month}</td>
-                    <td className="p-2">{f.Predicted_Yield}</td>
+                    <td className="p-2">{f.Predicted_Yield} t/ha</td>
                   </tr>
                 ))}
               </tbody>

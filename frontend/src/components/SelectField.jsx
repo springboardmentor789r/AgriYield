@@ -1,11 +1,4 @@
-export default function SelectField({
-  label,
-  name,
-  value,
-  options,
-  onChange,
-  error,
-}) {
+export default function SelectField({label,name,value,options,onChange,error,}) {
   return (
     <div>
       <label className="block text-sm font-medium text-slate-700 mb-1">

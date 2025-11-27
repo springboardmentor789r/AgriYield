@@ -1,6 +1,3 @@
-
-
-
 from fastapi import FastAPI, Request
 from pydantic import BaseModel, validator
 import joblib
@@ -48,15 +45,6 @@ async def validation_exception_handler(request, exc):
         },
     )
 
-from fastapi import FastAPI, Request
-from pydantic import BaseModel, validator
-import joblib
-import pandas as pd
-from catboost import CatBoostRegressor
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
-from fastapi.exceptions import RequestValidationError
-import time
 
 app = FastAPI(title="Crop Yield Prediction API")
 
