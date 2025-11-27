@@ -71,7 +71,7 @@ export default function Sidebar() {
       <div className="mt-auto pt-6 border-t border-emerald-800/40 text-[11px] leading-relaxed text-emerald-100/80">
       <p>Credits</p>
       <p className="mt-1">
-        Built by <span className="font-semibold">Farhan Abid</span> AI Intern Batch 5 @2025.
+        Built by <span className="font-semibold"> AI Intern</span> @2025.
         </p>
         <p className="mt-1 text-emerald-100/70">
         Live project - Infosys Springboard Virtual Internship 6.0  {new Date().getFullYear()}
@@ -81,4 +81,5 @@ export default function Sidebar() {
     </aside>
   );
 }
+
  
