@@ -1,0 +1,27 @@
+# Python virtual environments
+myvenv/
+venv/
+env/
+.venv/
+
+# Python byte code
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Model files (large files - add to separate repo or use Git LFS)
+*.pkl
+*.joblib
+*.h5
+models/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
