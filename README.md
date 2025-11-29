@@ -111,3 +111,7 @@ Enhanced model tuning
 🏆 Acknowledgment
 
 Developed as part of the Infosys Springboard Virtual Internship 6.0 – AI in Agriculture theme.
+
+📜 License
+
+This project is created by SHANMUGAPRIYAN R , © 2025 — All rights reserved.
