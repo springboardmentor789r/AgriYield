@@ -1,0 +1,40 @@
+Crop_Yield/
+|
+|-Backend/
+|    |-main.py
+|    |-regression_model.pkl
+|    |-time_series_model.pkl
+|    
+|-frontend/
+     |-node_modules/
+     |-public/
+     |   |-index.html
+     |
+     |-src/
+     |   |-assets
+     |   |   |-home/[Images uploaded for home page]
+     |   |   |-insights/[Images uploaded for insight pages]
+     |   |   |-react.svg
+     |   |
+     |   |-components/
+     |   |   |-Sidebar.jsx
+     |   |   |-TimeSeriesForecast.jsx
+     |   |   |-RegressionForm.jsx
+     |   |   
+     |   |-pages
+     |   |   |-Home.jsx
+     |   |   |-Insights.jsx
+     |   |   |-Regression.jsx
+     |   |   |-TimeSeries.jsx
+     |   | 
+     |   |-services/
+     |   |   |-api.js
+     |   |   
+     |   |-App.jsx
+     |   |-App.css
+     |   |-main.jsx
+     |   |-index.css
+     |-package.json
+     |-package-lock.json
+     |-eslint.config.js
+     |-.gitignore
