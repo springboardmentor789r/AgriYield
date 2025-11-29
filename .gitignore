@@ -1,3 +1,4 @@
+HEAD
 # Python virtual environments
 myvenv/
 venv/
@@ -25,3 +26,24 @@ models/
 # IDE
 .vscode/
 .idea/
+
+# dependencies
+node_modules/
+pnpm-lock.yaml
+yarn.lock
+
+# build output
+dist/
+dist-ssr/
+*.local
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editor/OS
+.vscode/
+.DS_Store
+Thumbs.db
+ce04b2e (Initial frontend commit)
