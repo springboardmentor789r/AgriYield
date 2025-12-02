@@ -1,98 +1,69 @@
-# 🌱 AgriYield Predictor - AI Powered Agriculture Insights 🚜📈
+🌾 AgriYield
+Intelligent Crop Yield Prediction & Forecasting Platform
 
-A complete **End-to-End Machine Learning + Time-Series Forecasting** web application designed to help farmers, researchers, and agri-business professionals accurately **predict crop yield** and **forecast future production** using environmental & soil factors.
+AgriYield is a complete AI-powered agriculture analytics system designed to help researchers, farmers, and planners make data-driven decisions. It uses CatBoost Regression for accurate yield prediction and Prophet for intelligent time-series forecasting.
 
----
+🚀 Features
+🔍 1. Machine Learning-Based Yield Prediction
 
-## 🧠 Key Features
+Built using CatBoost Regressor
 
-| Feature | Description |
-|--------|-------------|
-| 🎯 Crop Yield Prediction | Random Forest ML model trained on multi-year agricultural dataset |
-| ⏳ Time-Series Forecasting | Prophet model to forecast upcoming yield trends |
-| 🌦️ Environmental Analysis | Uses Temperature, Humidity, Wind Speed, Soil pH, NPK, Soil Quality |
-| 📊 Interactive UI Charts | Real-time insights for prediction & forecast |
-| 🌐 Full-Stack Application | FastAPI backend + ReactJS + Tailwind CSS frontend |
-| 🔁 Pipeline Automation | Encoders, preprocessing, scaling — fully automated |
-| 📱 Responsive Design | Works smoothly on desktop and mobile |
+Handles both numerical & categorical data
 
----
+Outputs realistic yield (t/ha) based on soil and environment parameters
 
-## 📚 Data Source (Dataset Reference)
+📈 2. Forecasting With Prophet
 
-Dataset from Kaggle:  
-📌 Crop Yield and Environmental Factors (2014-2023)  
-🔗 https://www.kaggle.com/datasets/madhankumar789/crop-yield-and-environmental-factors-2014-2023/data
+Predict future crop yield for upcoming dates
 
-The dataset includes:
-- **10 major crop types** (Wheat, Corn, Rice, etc.)
-- **5 soil types** (Sandy, Clay, Loamy, Peaty, Saline)
-- Daily environmental measurements + crop yield per hectare
+Trend lines and time-series graph visualization
 
----
+Supports seasonal variation in agricultural datasets
 
-## 🧩 Technology Stack
+🎨 3. Modern Web Application UI
 
-### 🔙 Backend (AI Model API)
-- Python (FastAPI)
-- Joblib (Model Serialization)
-- Prophet (Time Series Forecasting)
-- Random Forest Regressor (ML Prediction)
-- Pandas, NumPy
+Built using React + Tailwind CSS
 
-### 🎨 Frontend (User Interface)
-- React.js
-- React Router
-- Tailwind CSS (Custom theming)
-- Axios (API Integration)
-- Chart.js (Visual Analytics)
+Dashboard-style interface
 
----
-## Machine Learning Models
-| Model                   | Purpose                            | Performance               |
-| ----------------------- | ---------------------------------- | ------------------------- |
-| Random Forest Regressor | Prediction based on soil & weather | High accuracy (R² > 0.95) |
-| Prophet (Meta/Facebook) | Short-term yield forecasting       | Stable forecasting trends |
+Interactive charts using Chart.js
 
+Fully responsive design
+
+🔗 4. Full-Stack Integration
+
+Frontend → Backend → Model → Forecast → Visualization
+All processes automated seamlessly using FastAPI + Axios.
+
+🧪 Tech Stack
+Layer	Technologies
+Backend	FastAPI, Python, CatBoost, Prophet, Pandas, NumPy, Joblib, Uvicorn
+Frontend	React.js, Tailwind CSS, Axios, Chart.js, React Router
+Dataset	Kaggle — Crop Yield & Environmental Dataset (2014-2023)
+📁 Dataset Highlights
+
+Multi-year crop data
+
+Soil nutrients (N, P, K)
+
+Weather & yield records
+
+Multiple crop categories
 
 🔮 Future Enhancements
 
-📌 Add deployment (Netlify + Render / Docker)
+🌦 Real-time weather API integration
 
-📌 Real weather & soil sensor integration (IoT)
+📊 Multi-crop comparison dashboard
 
-📌 User accounts & crop planning dashboard
+🔐 User authentication + profiles
 
-📌 Multi-region farm analytics support
+☁ Deployment (Render + Netlify)
 
-# 🏆 Acknowledgements
+🏆 Credits
 
-This project is developed as part of Infosys Springboard Virtual Internship 6.0
-Under the theme of AI in Agriculture
+Developed as part of Infosys Springboard Virtual Internship 6.0 (AI in Agriculture).
 
-<!--
-# Authors
-
-| Developer       | Contact                                                                                                    |
-| --------------- | ---------------------------------------------------------------------------------------------------------- |
-| **Farhan Abid** | 📧 [f.abid.work@gmail.com](mailto:f.abid.work@gmail.com)                                                   |
-|                 | 🔗 LinkedIn: FARHAN ABID(http://www.linkedin.com/in/farhan-abid-8001a9253) |
-|                 | 🐙 GitHub: FARHAN ABID(http://github.com/farhanabid786)                              |
--->
-
-# License
-This project is licensed — “Built by Farhan Abid with License”
-All rights reserved © 2025
-
----
-## 🚀 Architecture Overview
-
-```mermaid
-graph TD;
-    User-->Frontend_UI(React + Tailwind);
-    Frontend_UI-- API Calls -->Backend(FastAPI);
-    Backend-- ML Prediction -->RF_Model(Random Forest);
-    Backend-- Time Forecast -->Prophet_Model;
-    RF_Model-->Response_Prediction;
-    Prophet_Model-->Forecast_Response;
+📌 Author: RAJ KEWAT
+© 2025 — All rights reserved.
 
